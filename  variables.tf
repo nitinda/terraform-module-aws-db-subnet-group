@@ -13,7 +13,7 @@ variable "subnet_ids" {
 }
 
 ## Tags
-variable common_tags {
+variable "tags" {
   description = "Resources Tags"
   type        = "map"
 }
