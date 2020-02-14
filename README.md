@@ -33,7 +33,6 @@ _Below we are able to check the resources that are being created as part of this
 
 _To use this module, add the following call to your code:_
 
-* _**Example without Option variables**_
 
 ```tf
 module "rds_cluster_parameter_group" {
@@ -60,42 +59,6 @@ module "rds_cluster_parameter_group" {
 }
 ```
 
-* _**Example with Option variables**_
-
-```tf
-module "rds_cluster_parameter_group" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-rds-cluster-parameter-group.git?ref=master"
-
-  providers = {
-    aws = aws.services
-  }
-
-  # Tags
-  tags = {
-    Project      = "POC"
-    Owner        = "Platform Team"
-    Environment  = "prod"
-    BusinessUnit = "Platform Team"
-    ManagedBy    = "Terraform"
-    Application  = "RDS Cluster Parameter Group"
-  }
-
-  # RDS Subnet Group
-  name_prefix = "rds-cluster-parameter-group-"
-  description = "DB parameter group for grafana rds"
-  family      = "aurora5.6"
-  parameter   = [
-    {
-      name  = "character_set_server"
-      value = "utf8"
-    },
-    {
-      name  = "character_set_client",
-      value = "utf8"
-    }
-  ]
-}
-```
 
 ---
 
@@ -107,8 +70,7 @@ _The variables required in order for the module to be successfully called from t
 |:----|:----|-----:|:---:|
 | **_name\_prefix_** | _Creates a unique name_ | _string_ | **_Required_** |
 | **_description_** | _The description of the DB subnet group_ | _string_ | **_Required_** |
-| **_family_** | _The family of the DB cluster_ | _string_ | **_Required_** |
-| **_parameter_** | _A list of DB parameters to apply_ | _any_ | **_Optional (Default [])_** |
+| **_subnet\_ids_** | _A list of VPC subnet IDs_ | _string_ | **_Required_** |
 | **_tags_** | _Resource tags_ | _map(string)_ | **_Required_** |
 
 
