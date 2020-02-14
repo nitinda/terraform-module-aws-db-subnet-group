@@ -53,9 +53,9 @@ module "rds_cluster_parameter_group" {
   }
 
   # RDS Subnet Group
-  name_prefix = "rds-cluster-parameter-group-"
-  description = "DB parameter group for grafana rds"
-  family      = "aurora5.6"
+  name_prefix = "db-subnet-group-"
+  description = "DB subnet group for DB"
+  subnet_ids  = var.subnet_ids
 }
 ```
 
