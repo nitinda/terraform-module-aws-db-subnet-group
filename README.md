@@ -70,7 +70,7 @@ _The variables required in order for the module to be successfully called from t
 |:----|:----|-----:|:---:|
 | **_name\_prefix_** | _Creates a unique name_ | _string_ | **_Required_** |
 | **_description_** | _The description of the DB subnet group_ | _string_ | **_Required_** |
-| **_subnet\_ids_** | _A list of VPC subnet IDs_ | _string_ | **_Required_** |
+| **_subnet\_ids_** | _A list of VPC subnet IDs_ | _list(string)_ | **_Required_** |
 | **_tags_** | _Resource tags_ | _map(string)_ | **_Required_** |
 
 
