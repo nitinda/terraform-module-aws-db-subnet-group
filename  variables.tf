@@ -9,11 +9,12 @@ variable "description" {
 
 variable "subnet_ids" {
   description = "A list of VPC subnet IDs."
-  type        = "list"
+  type        = list(string)
 }
 
 ## Tags
 variable "tags" {
   description = "Resources Tags"
-  type        = "map"
+  type        = map(string)
 }
+
