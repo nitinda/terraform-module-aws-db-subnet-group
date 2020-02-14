@@ -35,8 +35,8 @@ _To use this module, add the following call to your code:_
 
 
 ```tf
-module "rds_cluster_parameter_group" {
-  source = "git::https://github.com/nitinda/terraform-module-aws-rds-cluster-parameter-group.git?ref=master"
+module "db_subnet_group" {
+  source = "git::https://github.com/nitinda/terraform-module-aws-db-subnet-group.git?ref=master"
 
   providers = {
     aws = aws.services
